@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>C. D. Kester | The Bunker</title>
+<meta name="description" content="The Bunker, Chasing Demons and Trailer Park: horror fiction by C. D. Kester.">
+<meta property="og:title" content="A homepage for C. D. Kester, made by Sparsh Saini">
+<meta property="og:description" content="A homepage idea for The Bunker and C. D. Kester's horror fiction, made by Sparsh Saini. Not the official site.">
+<meta property="og:image" content="https://sparshsainied-prog.github.io/cdkester/img/og.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23080a0c'/><rect x='13' y='4' width='6' height='18' fill='%23000' stroke='%23b9bcbe' stroke-width='1'/><ellipse cx='16' cy='26' rx='7' ry='4' fill='%23b0191c'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/bunker-plate.jpg">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+/* Colours from The Bunker: storm cloud, cut grass, wet soil, the black shaft, steel grey author name, the blood on the rock. */
+:root {
+  --night: #07090b;
+  --storm: #1b2630;
+  --cloud: #8fa0ab;
+  --grass: #3f6b2b;
+  --soil: #22160f;
+  --soil-2: #130c08;
+  --steel: #b9bcbe;
+  --blood: #b0191c;
+  --blood-deep: #5e0b0e;
+  --bone: #e9e6e0;
+  --display: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  --text: "Barlow", "Helvetica Neue", Arial, sans-serif;
+  --gutter: clamp(1.1rem, 5vw, 4rem);
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--night); color: var(--bone); font-family: var(--text); font-size: 1.125rem; line-height: 1.55; overflow-x: hidden; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+.wrap { max-width: 72rem; margin: 0 auto; padding: 0 var(--gutter); }
+h1, h2, h3 { font-family: var(--display); font-weight: 800; margin: 0; line-height: 1; text-transform: uppercase; letter-spacing: .01em; }
+p { margin: 0 0 1rem; }
+.label { font-family: var(--text); font-weight: 600; text-transform: uppercase; letter-spacing: .24em; font-size: .86rem; color: var(--steel); margin: 0 0 .9rem; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+:focus-visible { outline: 2px solid var(--steel); outline-offset: 3px; }
+
+/* Buttons: a square black slab with the cover's grey rule and tracked caps, like the author name */
+.btn { display: inline-block; font-family: var(--text); font-weight: 600; font-size: .95rem; letter-spacing: .2em; text-transform: uppercase; text-decoration: none; color: var(--steel); background: #000; border: 2px solid var(--steel); padding: .8rem 1.25rem .75rem; transition: background .15s, color .15s, border-color .15s; }
+.btn:hover, .btn:focus-visible { background: var(--blood); border-color: var(--blood); color: #fff; }
+.q { font-weight: 600; letter-spacing: .06em; text-underline-offset: .3em; }
+.buy { display: flex; flex-wrap: wrap; gap: .8rem 1.3rem; align-items: center; margin-top: 1.3rem; }
+
+.top { position: absolute; z-index: 20; top: 0; left: 0; right: 0; }
+.made { margin: 0; padding: .45rem var(--gutter); background: #000; color: var(--bone); font-size: .9rem; line-height: 1.35; text-align: center; }
+.bar { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: .75rem var(--gutter); }
+.mark { font-weight: 600; font-size: 1.05rem; letter-spacing: .3em; text-transform: uppercase; text-decoration: none; color: var(--steel); }
+.bar nav { display: flex; gap: 1.5rem; font-weight: 600; font-size: .86rem; letter-spacing: .2em; text-transform: uppercase; }
+.bar nav a { text-decoration: none; color: var(--steel); }
+.bar nav a:hover { color: #fff; }
+@media (max-width: 640px) { .bar nav a:not(:last-child) { display: none; } .mark { letter-spacing: .22em; } }
+
+/* Hero: the N of BUNKER is a shaft. It is drilled down through the grass and the soil to the rock, and the camera rides its tip. */
+.hero { position: relative; }
+.js .hero { height: 460svh; }
+.stage { position: relative; height: 100svh; min-height: 34rem; overflow: hidden; background: #06080a; }
+.js .stage { position: sticky; top: 0; }
+.world { position: absolute; left: 0; top: 0; width: min(80vw, 30rem); transform-origin: 0 0; will-change: transform; }
+.world > * { position: absolute; display: block; }
+.world .plate { position: relative; width: 100%; height: auto; }
+.world .shaft { left: 36%; top: 15.6%; width: 5.3333%; height: 41.4667%; transform-origin: 50% 0; will-change: transform; }
+.world .shaft img { width: 100%; height: 100%; }
+.world .lit { left: 31.3333%; top: 59.1111%; width: 37.3333%; height: 20%; opacity: 0; will-change: opacity; }
+.world .lit img { width: 100%; height: 100%; }
+.copy { position: absolute; left: 56%; right: var(--gutter); top: 50%; transform: translateY(-50%); max-width: 29rem; will-change: opacity; }
+.copy .line { font-size: 1.3rem; line-height: 1.4; color: var(--bone); max-width: 24rem; }
+.cap { position: absolute; left: var(--gutter); top: 60%; width: min(22rem, calc(100% - 2 * var(--gutter))); text-align: left; opacity: 0; pointer-events: none; will-change: opacity; font-family: var(--text); font-weight: 500; font-size: 1.3rem; line-height: 1.35; color: var(--bone); }
+.cap b { display: block; font-family: var(--text); font-weight: 600; font-size: .86rem; letter-spacing: .24em; text-transform: uppercase; color: var(--steel); margin-bottom: .7rem; }
+html:not(.js) .cap { display: none; }
+@media (min-width: 860px) { .copy .line { font-size: 1.55rem; max-width: 26rem; } }
+@media (max-width: 859px) {
+  .copy { left: var(--gutter); right: var(--gutter); top: auto; bottom: 3.2svh; transform: none; max-width: none; text-align: center; }
+  .copy .label { margin-bottom: .5rem; }
+  .copy .line { font-size: 1.12rem; margin: 0 auto; }
+  .copy .buy { justify-content: center; margin-top: .9rem; }
+}
+
+/* Calm sections */
+.band { padding: clamp(4rem, 9vw, 7rem) 0; }
+h2 { font-size: clamp(2.4rem, 6vw, 4.4rem); margin-bottom: 1.2rem; }
+.row { display: grid; grid-template-columns: minmax(0, 20rem) minmax(0, 1fr); gap: clamp(2rem, 6vw, 5rem); align-items: center; }
+.row img { box-shadow: 0 1.6rem 3rem rgba(0, 0, 0, .7); }
+.lede { max-width: 34rem; font-size: 1.28rem; line-height: 1.45; }
+.meta { color: var(--steel); }
+
+.bunker { background: var(--soil); border-top: 10px solid var(--grass); }
+.bunker h2 { color: var(--bone); }
+.demons { background: var(--blood-deep); color: var(--bone); }
+.demons h2 { color: #fff; }
+.demons .label, .demons .meta { color: #e6b4b4; }
+.demons .btn { background: #000; color: var(--bone); border-color: var(--bone); }
+.demons .btn:hover, .demons .btn:focus-visible { background: var(--bone); color: #000; border-color: var(--bone); }
+.demons .row + .row { margin-top: clamp(3.5rem, 7vw, 6rem); }
+.demons .row.second { grid-template-columns: minmax(0, 1fr) minmax(0, 15rem); }
+.demons .row.second img { order: 2; }
+
+.stories { background: var(--night); }
+.stories ul { list-style: none; margin: 2rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 clamp(2rem, 6vw, 5rem); border-top: 2px solid var(--steel); max-width: 62rem; }
+.stories li { padding: .95rem 0; border-bottom: 1px solid #2a3239; }
+.stories li b { font-family: var(--display); font-weight: 700; font-size: 1.05rem; text-transform: uppercase; letter-spacing: .02em; display: block; color: var(--bone); }
+.stories li span { color: var(--cloud); }
+
+.about { background: var(--storm); }
+.about .grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: clamp(2rem, 6vw, 5rem); align-items: start; }
+.about blockquote { margin: 0; padding: 0 0 0 1.4rem; border-left: 6px solid #000; font-family: var(--display); font-weight: 700; font-size: clamp(1.3rem, 2.4vw, 1.75rem); line-height: 1.25; text-transform: uppercase; }
+.about cite { display: block; margin-top: 1rem; font-family: var(--text); font-style: normal; font-weight: 500; text-transform: none; font-size: 1rem; color: var(--cloud); }
+
+.close { background: #000; text-align: left; }
+.close .grid { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2rem; align-items: end; }
+.close h2 { margin-bottom: .8rem; }
+.close p { max-width: 32rem; }
+@media (max-width: 859px) {
+  .row, .demons .row.second, .about .grid, .close .grid, .stories ul { grid-template-columns: 1fr; }
+  .row > img { max-width: 15rem; }
+  .demons .row.second img { order: 0; }
+}
+footer { background: #000; border-top: 1px solid #1c2227; padding: 2.2rem 0 2.6rem; font-size: .95rem; color: var(--cloud); }
+footer a { color: var(--steel); }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } }
+</style>
+</head>
+<body>
+<header class="top">
+  <p class="made">A homepage idea made by Sparsh Saini for C. D. Kester. Not their official site.</p>
+  <div class="bar">
+    <a class="mark" href="#">C. D. Kester</a>
+    <nav aria-label="Main"><a href="#books">Books</a><a href="#stories">Stories</a><a href="#about">About</a><a href="https://cdkester.bigcartel.com/">Shop</a></nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" aria-label="The Bunker">
+  <div class="stage">
+    <h1 class="sr">The Bunker, by C. D. Kester</h1>
+    <div class="world" id="world">
+      <img class="plate" src="img/bunker-plate.jpg" width="1500" height="2250" alt="Cover of The Bunker by C. D. Kester: storm clouds over a field with a small church, and under the soil a bloodied rock">
+      <div class="shaft" id="shaft"><img src="img/shaft.png" width="80" height="933" alt=""></div>
+      <div class="lit" id="lit"><img src="img/rock-lit.png" width="560" height="450" alt=""></div>
+    </div>
+    <div class="copy" id="copy">
+      <p class="label">A novella</p>
+      <p class="line">A young girl named Madison has been trapped in an underground bunker with her 6 sisters for her entire life.</p>
+      <div class="buy"><a class="btn" href="https://cdkester.bigcartel.com/product/the-bunker">Signed copy, $15</a><a class="q" href="#books">All the books</a></div>
+    </div>
+    <p class="cap" id="cap" aria-hidden="true"><b>Underground</b>A young girl named Madison has been trapped in an underground bunker with her 6 sisters for her entire life.</p>
+  </div>
+</section>
+
+<section class="band bunker" id="books">
+  <div class="wrap row">
+    <img src="img/bunker.jpg" alt="The Bunker by C. D. Kester" width="1000" height="1500">
+    <div>
+      <p class="label">Novella, 73 pages</p>
+      <h2>The Bunker</h2>
+      <p class="lede">A young girl named Madison has been trapped in an underground bunker with her 6 sisters for her entire life.</p>
+      <div class="buy"><a class="btn" href="https://cdkester.bigcartel.com/product/the-bunker">Signed copy, $15</a><a class="q" href="https://www.amazon.com/Bunker-C-D-Kester-ebook/dp/B08L26PJJP">Ebook on Amazon</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="band demons">
+  <div class="wrap">
+    <div class="row">
+      <img src="img/chasing-demons.jpg" alt="Chasing Demons by C. D. Kester" width="695" height="994">
+      <div>
+        <p class="label">Novel, 256 pages</p>
+        <h2>Chasing Demons</h2>
+        <p class="lede">Michael, Tim, Dominic, and Logan are four buddies in the suburban town of Fairmont, Texas.</p>
+        <div class="buy"><a class="btn" href="https://cdkester.bigcartel.com/product/chasing-demons">Signed copy, $20</a><a class="q" href="https://www.amazon.com/Chasing-Demons-C-D-Kester-ebook/dp/B0C3969GDK">Ebook on Amazon</a></div>
+      </div>
+    </div>
+    <div class="row second">
+      <div>
+        <p class="label">Novella, 90 pages</p>
+        <h2>Trailer Park</h2>
+        <p class="lede">The boys at Los Hermanos Trailer Park are no strangers to a good urban legend.</p>
+        <div class="buy"><a class="btn" href="https://cdkester.bigcartel.com/product/trailer-park">Signed copy, $15</a><a class="q" href="https://cdkester.wordpress.com/where-to-read/">Where to read</a></div>
+      </div>
+      <img src="img/trailer-park.jpg" alt="The paperback of Trailer Park by C. D. Kester" width="448" height="770">
+    </div>
+  </div>
+</section>
+
+<section class="band stories" id="stories">
+  <div class="wrap">
+    <p class="label">Short fiction</p>
+    <h2>Stories for the dark</h2>
+    <p class="lede">Alongside the three books there are short stories in ezines, anthologies and podcasts. Here are some of them.</p>
+    <ul>
+      <li><b>Halloween Night</b><span>on Night's End, a podcast</span></li>
+      <li><b>2069</b><span>on Horror Hill, a podcast</span></li>
+      <li><b>Going Somewhere?</b><span>in Route 13: Highway to Hell</span></li>
+      <li><b>The Beach City Slasher</b><span>in The Alien Buddha Gets Rejected, part 2</span></li>
+      <li><b>Permanent Position</b><span>in Dreadful Nostalgia</span></li>
+      <li><b>The Cruise</b><span>in Lovecraftiana, vol. 9, issue 1</span></li>
+      <li><b>Johnny Thatcher, Body Snatcher</b><span>in Sometimes Hilarious Horror</span></li>
+      <li><b>The Peculiar Case of the Simon Smith Farmhouse</b><span>in Hellmouth Lit</span></li>
+    </ul>
+    <div class="buy"><a class="btn" href="https://cdkester.wordpress.com/where-to-read/">Where to read them</a><a class="q" href="https://youtube.com/playlist?list=PL34gv8V1q6vRfPBGdwrMerRxSX_b1F9hU">Stories on YouTube</a></div>
+  </div>
+</section>
+
+<section class="band about" id="about">
+  <div class="wrap grid">
+    <div>
+      <p class="label">The writer</p>
+      <h2>Spooky stories since sixth grade</h2>
+      <p class="lede">C. D. Kester lives in Kingwood, Texas. His first spooky story was a retelling of his mother's real encounter with a UFO. By thirteen he was working on his first novel, and it had a scarecrow in it.</p>
+      <p>By day he is a metal recycling professional, and he is a husband and a father of two.</p>
+    </div>
+    <blockquote>"I began writing spooky stories when I was in sixth grade."<cite>From his blog, A Writer's Journey, April 2024</cite></blockquote>
+  </div>
+</section>
+
+<section class="band close">
+  <div class="wrap grid">
+    <div>
+      <p class="label">Newsletter</p>
+      <h2>Come down</h2>
+      <p>New stories and news arrive by email on his Substack.</p>
+    </div>
+    <div class="buy"><a class="btn" href="https://cdkester.substack.com/subscribe">Subscribe</a><a class="q" href="https://linktr.ee/cdkester">All his links</a></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap"><p>A mockup made by Sparsh Saini for C. D. Kester. Not affiliated, not live. Covers and words from <a href="https://cdkester.wordpress.com">cdkester.wordpress.com</a> and his shop.</p></div>
+</footer>
+
+<script>
+(() => {
+  const hero = document.querySelector('.hero'), stage = document.querySelector('.stage');
+  const world = document.getElementById('world'), shaft = document.getElementById('shaft'), lit = document.getElementById('lit');
+  const copy = document.getElementById('copy'), cap = document.getElementById('cap');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const SX = .392, T0 = .156, TL = .4147; // shaft x, top, length in cover fractions
+  const ROCK = .695, S0 = 26 / 933;
+  const cl = (v, a = 0, b = 1) => Math.min(Math.max(v, a), b);
+  const sm = t => { t = cl(t); return t * t * (3 - 2 * t); };
+  const lerp = (a, b, t) => a + (b - a) * t;
+  let L = {}, ticking = false;
+
+  function layout() {
+    const W = innerWidth, H = stage.clientHeight, desk = W >= 860;
+    let fh, fw, cx, cy, sx, Wc;
+    if (desk) { fh = Math.min(H * .78, W * .9 * 1.5); fw = fh / 1.5; cx = W * .3; cy = H * .56; sx = W * .4;
+      Wc = Math.max(1500, 1.03 * sx / SX, 1.03 * (W - sx) / (1 - SX)); }
+    else { fh = Math.min(H * .56, W * .8 * 1.5); fw = fh / 1.5; cx = W / 2; cy = 100 + fh / 2; sx = W / 2; Wc = fw * 2.7; }
+    L = { W, H, fw, fh, cx, cy, sx, Wc, Hc: Wc * 1.5, Z: Wc / fw, desk };
+    world.style.width = Wc + 'px';
+    const syR = L.H * .28;
+    if (desk) { cap.style.left = (L.sx + (.5 - SX) * Wc + .187 * Wc + 36) + 'px'; cap.style.top = (syR - 50) + 'px'; }
+    else { cap.style.left = '1.1rem'; cap.style.top = (syR + .245 * L.Hc) + 'px'; }
+  }
+  function cam(fx, fy, sx, sy, z) {
+    const k = z / L.Z;
+    world.style.transform = 'translate3d(' + (sx - fx * L.Wc * k).toFixed(1) + 'px,' + (sy - fy * L.Hc * k).toFixed(1) + 'px,0) scale(' + k.toFixed(5) + ')';
+  }
+  function frame(p) {
+    const H = L.H, Z = L.Z, syT = H * .36, syR = H * .28;
+    let fx = .5, fy = .5, sx = L.cx, sy = L.cy, z = 1, s = 1, lt = 0, ct = 0, cp = 1;
+    const sEase = sm((p - .13) / .47);
+    s = p < .13 ? S0 : lerp(S0, 1, sEase);
+    const tip = T0 + TL * s;
+    if (p < .13) { // push in to the stem of the N
+      const t = sm(p / .13);
+      fx = lerp(.5, SX, t); fy = lerp(.5, tip, t); sx = lerp(L.cx, L.sx, t); sy = lerp(L.cy, syT, t); z = Math.exp(lerp(0, Math.log(Z), t));
+    } else if (p < .6) { fx = SX; fy = tip; sx = L.sx; sy = syT; z = Z; }
+    else if (p < .7) { const t = sm((p - .6) / .1); fx = SX; fy = lerp(tip, ROCK, t); sx = L.sx; sy = lerp(syT, syR, t); z = Z; }
+    else if (p < .78) { fx = SX; fy = ROCK; sx = L.sx; sy = syR; z = Z; }
+    else if (p < .96) { const t = sm((p - .78) / .18); fx = lerp(SX, .5, t); fy = lerp(ROCK, .5, t); sx = lerp(L.sx, L.cx, t); sy = lerp(syR, L.cy, t); z = Math.exp(lerp(Math.log(Z), 0, t)); }
+    lt = sm((p - .62) / .1) * (p < .8 ? 1 : 1 - sm((p - .8) / .12));
+    ct = sm((p - .68) / .06) * (1 - sm((p - .77) / .04));
+    cp = p < .05 ? 1 - sm(p / .05) : sm((p - .9) / .08);
+    cam(fx, fy, sx, sy, z);
+    shaft.style.transform = 'scaleY(' + s.toFixed(4) + ')';
+    lit.style.opacity = lt.toFixed(3); cap.style.opacity = ct.toFixed(3); copy.style.opacity = cp.toFixed(3);
+  }
+  function update() {
+    ticking = false;
+    const run = hero.offsetHeight - innerHeight;
+    frame(reduce || run <= 0 ? 1 : cl(-hero.getBoundingClientRect().top / run));
+  }
+  if (reduce) { hero.style.height = '100svh'; }
+  layout(); update();
+  addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+  addEventListener('resize', () => { layout(); update(); });
+})();
+</script>
+</body>
+</html>
